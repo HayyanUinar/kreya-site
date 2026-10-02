@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KREYA — PT Teknologi Kreatif Berkarya</title>
+<meta name="description" content="KREYA membangun website, sistem internal, dan integrasi IoT untuk perusahaan yang mengejar efisiensi operasional dan target Net Zero Emission 2050.">
+<link rel="canonical" href="https://www.kreyasolution.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KREYA">
+<meta property="og:title" content="KREYA — Digitalisasi yang terukur. Emisi yang turun.">
+<meta property="og:description" content="KREYA membangun website, sistem internal, dan integrasi IoT untuk perusahaan yang mengejar efisiensi operasional dan target Net Zero Emission 2050.">
+<meta property="og:url" content="https://www.kreyasolution.com/">
+<meta property="og:image" content="https://www.kreyasolution.com/assets/social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --bg-2:#f5f5f7;
+  --surface:#ffffff;
+  --ink:#1d1d1f;
+  --ink-2:#6e6e73;
+  --ink-3:#86868b;
+  --line:rgba(0,0,0,.10);
+  --line-soft:rgba(0,0,0,.06);
+  --accent:#2f61ad;
+  --accent-2:#2c94d1;
+  --chrome:rgba(255,255,255,.72);
+  --shadow-lg:0 24px 60px rgba(0,0,0,.10), 0 4px 14px rgba(0,0,0,.05);
+  --shadow-sm:0 2px 10px rgba(0,0,0,.05);
+  --frame:rgba(0,0,0,.08);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#000000;
+    --bg-2:#0e0e10;
+    --surface:#151517;
+    --ink:#f5f5f7;
+    --ink-2:#a1a1a6;
+    --ink-3:#86868b;
+    --line:rgba(255,255,255,.14);
+    --line-soft:rgba(255,255,255,.08);
+    --accent:#5b9bef;
+    --accent-2:#54c2f0;
+    --chrome:rgba(18,18,20,.72);
+    --shadow-lg:0 24px 60px rgba(0,0,0,.6), 0 4px 14px rgba(0,0,0,.4);
+    --shadow-sm:0 2px 10px rgba(0,0,0,.4);
+    --frame:rgba(255,255,255,.12);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#000000; --bg-2:#0e0e10; --surface:#151517; --ink:#f5f5f7; --ink-2:#a1a1a6;
+  --ink-3:#86868b; --line:rgba(255,255,255,.14); --line-soft:rgba(255,255,255,.08);
+  --accent:#5b9bef; --accent-2:#54c2f0; --chrome:rgba(18,18,20,.72);
+  --shadow-lg:0 24px 60px rgba(0,0,0,.6), 0 4px 14px rgba(0,0,0,.4);
+  --shadow-sm:0 2px 10px rgba(0,0,0,.4); --frame:rgba(255,255,255,.12);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Segoe UI",Roboto,system-ui,sans-serif;
+  font-size:1.0625rem;
+  line-height:1.55;
+  letter-spacing:0;
+  font-optical-sizing:auto;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:6px}
+
+.wrap{width:min(1120px,calc(100% - 2.5rem));margin-inline:auto}
+.section{padding-block:clamp(5rem,11vw,9.5rem)}
+.tint{background:var(--bg-2)}
+
+h1,h2,h3{margin:0;font-weight:640}
+.display{font-size:clamp(2.4rem,6vw,4.5rem);line-height:1.04;letter-spacing:-.036em;font-weight:680}
+.h2{font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.08;letter-spacing:-.028em;font-weight:660}
+.h3{font-size:clamp(1.2rem,1.9vw,1.5rem);line-height:1.24;letter-spacing:-.016em;font-weight:640}
+.lede{font-size:clamp(1.1rem,1.75vw,1.3rem);line-height:1.5;letter-spacing:-.01em;color:var(--ink-2);max-width:60ch}
+p{margin:0}
+.measure{max-width:62ch}
+.muted{color:var(--ink-2)}
+.tiny{font-size:.8125rem;line-height:1.5;letter-spacing:.004em;color:var(--ink-3)}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:60;
+  background:var(--chrome);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+}
+.nav::after{
+  content:"";position:absolute;left:0;right:0;top:100%;height:14px;pointer-events:none;
+  background:linear-gradient(to bottom,var(--chrome),transparent);
+  opacity:0;transition:opacity .25s ease;
+}
+.nav[data-stuck="true"]::after{opacity:1}
+.nav-in{display:flex;align-items:center;gap:1.5rem;height:56px}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-weight:660;letter-spacing:-.01em}
+.brand img{width:22px;height:22px}
+.nav-links{display:flex;gap:1.6rem;margin-left:auto;font-size:.875rem;color:var(--ink-2)}
+.nav-links a{text-decoration:none;transition:color .2s ease}
+.nav-links a:hover{color:var(--ink)}
+@media (max-width:720px){.nav-links{gap:1.1rem;font-size:.8125rem}}
+@media (max-width:460px){.nav-links a[data-optional]{display:none}}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:.72rem 1.5rem;border-radius:980px;border:1px solid transparent;
+  font-size:1rem;font-weight:560;letter-spacing:-.008em;text-decoration:none;cursor:pointer;
+  background:var(--accent);color:#fff;
+  transition:transform .1s ease-out,filter .2s ease;
+  touch-action:manipulation;
+}
+.btn:active{transform:scale(.97)}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{background:var(--line-soft);filter:none}
+
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(4rem,9vw,7rem);padding-bottom:clamp(3rem,6vw,5rem);text-align:center}
+.hero .display{margin-inline:auto;max-width:19ch;text-wrap:balance}
+.hero .lede{margin:1.4rem auto 0;text-align:center;max-width:52ch}
+.hero-cta{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:2.2rem}
+.hero-mark{width:56px;height:56px;margin:0 auto 1.6rem}
+
+.stage{padding-bottom:clamp(4rem,8vw,7rem)}
+.shot{
+  border-radius:20px;overflow:hidden;background:var(--surface);
+  border:1px solid var(--frame);box-shadow:var(--shadow-lg);
+  will-change:transform;
+}
+.shot img{width:100%}
+.stage .shot{max-width:980px;margin-inline:auto;transform-origin:50% 100%}
+.cap{margin:1.15rem auto 0;text-align:center;max-width:46ch}
+
+/* ---------- about ---------- */
+.split{display:grid;gap:clamp(2rem,5vw,4.5rem);grid-template-columns:1fr}
+@media (min-width:860px){.split{grid-template-columns:1.15fr .85fr;align-items:start}}
+.rulelist{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.rulelist li{padding:1rem 0;border-bottom:1px solid var(--line);display:flex;gap:1rem;align-items:baseline}
+.rulelist .k{color:var(--ink-3);font-variant-numeric:tabular-nums;font-size:.8125rem;min-width:1.4rem}
+
+/* ---------- visi misi ---------- */
+.vm{display:grid;gap:clamp(2.5rem,6vw,5rem);grid-template-columns:1fr}
+@media (min-width:900px){.vm{grid-template-columns:1fr 1fr}}
+.quote{
+  margin:1.6rem 0 0;padding-left:1.1rem;border-left:2px solid var(--accent-2);
+  font-size:1.05rem;line-height:1.5;color:var(--ink-2);font-style:italic;max-width:42ch;
+}
+.misi{margin:0;padding:0;list-style:none}
+.misi li{padding:1.15rem 0;border-bottom:1px solid var(--line);max-width:46ch}
+.misi li:first-child{border-top:1px solid var(--line)}
+
+/* ---------- bento ---------- */
+.bento{display:grid;gap:14px;grid-template-columns:1fr;margin-top:clamp(2.5rem,5vw,3.5rem)}
+@media (min-width:760px){.bento{grid-template-columns:repeat(3,1fr)}}
+.tile{
+  background:var(--surface);border:1px solid var(--line-soft);
+  padding:clamp(1.5rem,2.6vw,2.2rem);border-radius:22px;
+}
+.tile.big{border-radius:30px;padding:clamp(1.8rem,3.2vw,2.8rem)}
+@media (min-width:760px){
+  .tile.big{grid-column:span 2}
+  .tile.tall{grid-row:span 1}
+}
+.tile h3{margin-bottom:.55rem}
+.tile p{color:var(--ink-2);font-size:.96rem;max-width:44ch}
+.tile.big h3{font-size:clamp(1.45rem,2.4vw,1.9rem);letter-spacing:-.022em}
+.spark{width:34px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:2px;margin-bottom:1.1rem}
+
+/* ---------- carousel ---------- */
+.carousel-head{display:flex;align-items:flex-end;gap:1.5rem;flex-wrap:wrap}
+.carousel-head .lede{margin-top:.9rem}
+.cnav{display:flex;gap:.5rem;margin-left:auto}
+.cbtn{
+  width:40px;height:40px;border-radius:50%;border:1px solid var(--line);
+  background:var(--surface);color:var(--ink);cursor:pointer;
+  display:grid;place-items:center;transition:transform .1s ease-out,opacity .2s ease,background .2s ease;
+}
+.cbtn:active{transform:scale(.92)}
+.cbtn:disabled{opacity:.35;cursor:default}
+.cbtn svg{width:16px;height:16px}
+.viewport{
+  margin-top:clamp(2rem,4vw,3rem);
+  overflow:hidden;cursor:grab;touch-action:pan-y;
+  -webkit-user-select:none;user-select:none;
+}
+.viewport.dragging{cursor:grabbing}
+.track{display:flex;align-items:stretch;will-change:transform}
+.slide{
+  flex:0 0 auto;
+  background:var(--surface);border:1px solid var(--line-soft);
+  border-radius:28px;overflow:hidden;will-change:transform,opacity;
+  display:flex;flex-direction:column;
+}
+.slide-media{background:var(--bg-2);padding:clamp(.9rem,2vw,1.5rem);border-bottom:1px solid var(--line-soft)}
+.slide-media img{
+  border-radius:12px;border:1px solid var(--frame);box-shadow:var(--shadow-sm);
+  width:100%;height:auto;aspect-ratio:1.9;object-fit:cover;object-position:top center;
+  pointer-events:none;
+}
+.slide-body{padding:clamp(1.3rem,2.3vw,1.9rem)}
+.client{font-size:.8125rem;color:var(--accent-2);letter-spacing:-.003em;margin-bottom:.4rem}
+.slide-body p{color:var(--ink-2);margin-top:.7rem;font-size:.96rem;max-width:54ch}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.3rem}
+.chip{
+  font-size:.78rem;color:var(--ink-2);padding:.35rem .75rem;
+  border:1px solid var(--line);border-radius:980px;
+}
+.feats{display:grid;gap:12px;grid-template-columns:1fr;margin-top:1.4rem}
+@media (min-width:620px){.feats{grid-template-columns:repeat(3,1fr)}}
+.feat{border:1px solid var(--line-soft);border-radius:14px;padding:.9rem 1rem;background:var(--bg-2)}
+.feat b{display:block;font-weight:580;font-size:.9rem}
+.feat span{font-size:.8125rem;color:var(--ink-3)}
+.dots{display:flex;gap:.5rem;justify-content:center;margin-top:1.8rem}
+.dot{
+  width:7px;height:7px;border-radius:50%;border:0;padding:0;cursor:pointer;
+  background:var(--ink);opacity:.22;transition:opacity .25s ease,transform .25s ease;
+}
+.dot[aria-selected="true"]{opacity:.85;transform:scale(1.25)}
+.hint{margin-top:1rem;text-align:center}
+
+/* ---------- why ---------- */
+.why{display:grid;gap:clamp(2rem,5vw,4rem);grid-template-columns:1fr}
+@media (min-width:880px){.why{grid-template-columns:.8fr 1.2fr}}
+.why-list{margin:0;padding:0;list-style:none}
+.why-list li{padding:1.4rem 0;border-bottom:1px solid var(--line)}
+.why-list li:first-child{border-top:1px solid var(--line)}
+.why-list b{font-weight:600;letter-spacing:-.012em}
+.why-list p{color:var(--ink-2);margin-top:.3rem;font-size:.96rem;max-width:52ch}
+
+.caps{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem}
+.cap-item{border:1px solid var(--line);border-radius:980px;padding:.5rem 1.05rem;font-size:.9rem;color:var(--ink-2)}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;gap:clamp(2rem,5vw,4rem);grid-template-columns:1fr;margin-top:clamp(2rem,4vw,3rem)}
+@media (min-width:820px){.contact-grid{grid-template-columns:1fr 1fr}}
+.contact-list{margin:0;padding:0;list-style:none}
+.contact-list li{padding:1.05rem 0;border-bottom:1px solid var(--line)}
+.contact-list li:first-child{border-top:1px solid var(--line)}
+.contact-list a{text-decoration:none;font-size:1.05rem;letter-spacing:-.012em;transition:color .2s ease}
+.contact-list a:hover{color:var(--accent-2)}
+.contact-list .lab{display:block;font-size:.78rem;color:var(--ink-3);margin-bottom:.15rem}
+footer{border-top:1px solid var(--line);padding-block:2rem}
+.foot-in{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
+
+/* ---------- load sequence ---------- */
+.seq{opacity:0;transform:translate3d(0,14px,0)}
+.ready .seq{
+  opacity:1;transform:none;
+  transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);
+}
+.ready .seq:nth-child(1){transition-delay:.02s}
+.ready .d1{transition-delay:.08s}
+.ready .d2{transition-delay:.16s}
+.ready .d3{transition-delay:.24s}
+.ready .d4{transition-delay:.32s}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .seq{opacity:1;transform:none;transition:none !important}
+  .stage .shot{transform:none !important}
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--bg);backdrop-filter:none;-webkit-backdrop-filter:none;border-bottom:1px solid var(--line)}
+  .nav::after{display:none}
+}
+@media (prefers-contrast:more){
+  :root{--line:rgba(0,0,0,.35);--line-soft:rgba(0,0,0,.25)}
+  .nav{background:var(--bg)}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top"><img src="assets/logo.png" alt=""><span>KREYA</span></a>
+    <nav class="nav-links">
+      <a href="#tentang">Tentang</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#portofolio">Portofolio</a>
+      <a href="#kontak" data-optional>Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero wrap">
+    <img class="hero-mark seq d1" src="assets/logo.png" alt="Logo KREYA" width="56" height="56">
+    <h1 class="display seq d2">Digitalisasi yang terukur. Emisi yang turun.</h1>
+    <p class="lede seq d3">KREYA membangun website, sistem internal, dan integrasi IoT untuk perusahaan yang mengejar efisiensi operasional sekaligus target Net Zero Emission 2050.</p>
+    <div class="hero-cta seq d4">
+      <a class="btn" href="#portofolio">Lihat portofolio</a>
+      <a class="btn ghost" href="#kontak">Hubungi kami</a>
+    </div>
+  </section>
+
+  <section class="stage wrap">
+    <figure style="margin:0">
+      <div class="shot" id="heroShot"><picture><source srcset="assets/netro-dashboard.webp" type="image/webp"><img src="assets/netro-dashboard.jpg" alt="Dashboard monitoring energi Netro House menampilkan suhu, kelembapan, CO2, dan konsumsi listrik secara real time" width="686" height="448" fetchpriority="high" decoding="async"></picture></div>
+      <figcaption class="cap muted tiny">Netro House. Dashboard monitoring energi untuk rumah modular berenergi nol, dibangun bersama WIKA Gedung dan Dex Urban Solution.</figcaption>
+    </figure>
+  </section>
+
+  <section class="section tint" id="tentang">
+    <div class="wrap split">
+      <div>
+        <h2 class="h2">Kami menutup jarak antara teknologi mutakhir dan tanggung jawab lingkungan.</h2>
+        <p class="lede" style="margin-top:1.5rem">KREYA menggarap transformasi digital, integrasi Internet of Things, dan sistem yang dipakai orang setiap hari. Setiap proyek kami ukur dari dua sisi: seberapa ringkas proses klien setelahnya, dan seberapa besar dampaknya pada target keberlanjutan mereka.</p>
+      </div>
+      <div>
+        <p class="tiny" style="margin-bottom:.9rem">Fokus kerja</p>
+        <ul class="rulelist">
+          <li><span>Optimasi operasional klien</span></li>
+          <li><span>Efisiensi sistem yang bisa diukur</span></li>
+          <li><span>Solusi end-to-end dengan tujuan berkelanjutan</span></li>
+          <li><span>Inovasi teknologi kreatif</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap vm">
+      <div>
+        <p class="tiny" style="margin-bottom:.9rem">Visi</p>
+        <p class="h3" style="max-width:24ch;font-size:clamp(1.5rem,2.8vw,2.1rem);line-height:1.2;letter-spacing:-.022em">Menjadi mitra terpercaya dalam menyediakan solusi teknologi kreatif yang mendukung kehidupan berkelanjutan dan cerdas.</p>
+        <p class="quote">Kami berkomitmen untuk menjembatani kesenjangan antara teknologi mutakhir dan tanggung jawab lingkungan.</p>
+      </div>
+      <div>
+        <p class="tiny" style="margin-bottom:.9rem">Misi</p>
+        <ul class="misi">
+          <li>Transformasi digital untuk efisiensi dan akurasi operasional.</li>
+          <li>Optimalisasi sistem digital demi pengalaman pengguna yang lebih baik.</li>
+          <li>Dukungan untuk Green Building dan sertifikasi Net Zero Emission.</li>
+          <li>Pengembangan talenta teknologi kreatif Indonesia.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" id="layanan">
+    <div class="wrap">
+      <h2 class="h2" style="max-width:18ch">Empat cara kami masuk ke operasional Anda.</h2>
+      <div class="bento">
+        <article class="tile big">
+          <div class="spark"></div>
+          <h3>Website dan aplikasi</h3>
+          <p>Web korporat, aplikasi mobile iOS dan Android, serta dashboard analitik untuk data yang bergerak real time.</p>
+        </article>
+        <article class="tile">
+          <div class="spark"></div>
+          <h3>Transformasi proses bisnis</h3>
+          <p>Migrasi dari kerja manual ke digital, integrasi antar sistem, dan otomasi alur kerja.</p>
+        </article>
+        <article class="tile">
+          <div class="spark"></div>
+          <h3>Internet of Things</h3>
+          <p>Energy monitoring, sensor lingkungan, dan integrasi cloud untuk kontrol jarak jauh.</p>
+        </article>
+        <article class="tile big">
+          <div class="spark"></div>
+          <h3>Green dan smart tech</h3>
+          <p>Dukungan teknis untuk Green Building, sertifikasi Net Zero, dan kalkulator digital untuk mengukur dampak lingkungan sebuah bangunan.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="portofolio">
+    <div class="wrap">
+      <div class="carousel-head">
+        <div>
+          <h2 class="h2">Yang sudah kami kerjakan.</h2>
+          <p class="lede">Empat sistem yang kini dipakai untuk sertifikasi bangunan hijau dan monitoring energi di Indonesia.</p>
+        </div>
+        <div class="cnav">
+          <button class="cbtn" id="prev" aria-label="Proyek sebelumnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="cbtn" id="next" aria-label="Proyek berikutnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="viewport" id="viewport" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Portofolio proyek KREYA">
+      <div class="track" id="track">
+
+        <article class="slide" role="group" aria-roledescription="slide" aria-label="1 dari 4: GBCI Main Platform">
+          <div class="slide-media"><picture><source srcset="assets/gbci.webp" type="image/webp"><img src="assets/gbci.jpg" alt="Halaman utama situs Green Building Council Indonesia dengan panel Net Zero Apps dan daftar training mendatang" width="847" height="529" loading="lazy" decoding="async"></picture></div>
+          <div class="slide-body">
+            <p class="client">Green Building Council Indonesia</p>
+            <h3 class="h3">GBCI Main Platform</h3>
+            <p>Pengembangan ulang portal utama edukasi dan sertifikasi GBCI, dari informasi program sampai pendaftaran training dan alur sertifikasi bangunan hijau.</p>
+            <div class="chips"><span class="chip">Web korporat</span><span class="chip">Manajemen konten</span><span class="chip">Pendaftaran training</span></div>
+          </div>
+        </article>
+
+        <article class="slide" role="group" aria-roledescription="slide" aria-label="2 dari 4: Greenship Calculator">
+          <div class="slide-media"><picture><source srcset="assets/calc.webp" type="image/webp"><img src="assets/calc.jpg" alt="Antarmuka Greenship Calculator menampilkan ringkasan carbon balance, sektor energi, dan sektor kehutanan" width="633" height="396" loading="lazy" decoding="async"></picture></div>
+          <div class="slide-body">
+            <p class="client">Green Building Council Indonesia</p>
+            <h3 class="h3">Greenship Calculator</h3>
+            <p>Perhitungan sertifikasi yang dulu tersebar di banyak file Excel kami pindahkan ke satu sistem web terintegrasi: carbon emission, solar energy, lighting power density, sampai laporan akhir untuk asesor.</p>
+            <div class="chips"><span class="chip">Migrasi dari Excel</span><span class="chip">Kalkulasi emisi</span><span class="chip">Pelaporan</span></div>
+          </div>
+        </article>
+
+        <article class="slide" role="group" aria-roledescription="slide" aria-label="3 dari 4: Net Zero Certification Web Application">
+          <div class="slide-body" style="padding-block:clamp(2rem,4vw,3.2rem)">
+            <p class="client">Green Building Council Indonesia</p>
+            <h3 class="h3" style="font-size:clamp(1.4rem,2.4vw,1.9rem)">Net Zero Certification Web Application</h3>
+            <p>Platform sertifikasi bangunan dan industri yang menopang target nasional Net Zero Emission 2050, dengan proses penilaian yang seragam untuk semua pemohon.</p>
+            <div class="feats">
+              <div class="feat"><b>Form penilaian</b><span>Digitalisasi proses assessment</span></div>
+              <div class="feat"><b>Kalkulator energi</b><span>Perhitungan emisi otomatis</span></div>
+              <div class="feat"><b>Dashboard progres</b><span>Monitoring target secara real time</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="slide" role="group" aria-roledescription="slide" aria-label="4 dari 4: Smart IoT Netro House">
+          <div class="slide-media"><picture><source srcset="assets/netro.webp" type="image/webp"><img src="assets/netro.jpg" alt="Halaman depan Netro, sistem rumah modular smart net-zero" width="591" height="309" loading="lazy" decoding="async"></picture></div>
+          <div class="slide-body">
+            <p class="client">Netro, WIKA Gedung dan Dex Urban Solution</p>
+            <h3 class="h3">Smart IoT, Netro House</h3>
+            <p>Integrasi IoT untuk ekosistem rumah modular berenergi nol: sensor energi dan kualitas udara, integrasi cloud, serta monitoring lewat perangkat mobile yang tersambung ke Greenship Netzero.</p>
+            <div class="chips"><span class="chip">Sensor energi</span><span class="chip">Integrasi cloud</span><span class="chip">Mobile monitoring</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+    <div class="dots" id="dots" role="tablist" aria-label="Pilih proyek"></div>
+    <p class="hint tiny">Geser untuk melihat proyek lain.</p>
+  </section>
+
+  <section class="section tint">
+    <div class="wrap why">
+      <div>
+        <h2 class="h2">Mengapa memilih kami</h2>
+        <p class="lede" style="margin-top:1.2rem">Keunggulan kompetitif KREYA dalam menghadirkan solusi teknologi yang dipakai jangka panjang.</p>
+        <div class="caps">
+          <span class="cap-item">Software Engineering</span>
+          <span class="cap-item">IoT &amp; Embedded System</span>
+          <span class="cap-item">UI/UX Design</span>
+          <span class="cap-item">Data Science &amp; Analytics</span>
+        </div>
+      </div>
+      <ul class="why-list">
+        <li><b>Transformasi nyata</b><p>Peralihan dari proses manual ke digital yang efisien dan bisa diukur, bukan sekadar ganti tampilan.</p></li>
+        <li><b>Kolaborasi strategis</b><p>Kemitraan dengan GBCI, Netro, dan mitra konstruksi tepercaya.</p></li>
+        <li><b>IoT bertemu green tech</b><p>Integrasi teknologi pintar yang langsung mendukung keberlanjutan lingkungan.</p></li>
+        <li><b>Solusi end-to-end</b><p>Dari perencanaan sampai implementasi sistem, ditangani satu tim.</p></li>
+        <li><b>Tim yang terus belajar</b><p>Talenta yang berorientasi pada solusi jangka panjang, bukan tambal sulam.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="kontak">
+    <div class="wrap">
+      <h2 class="h2" style="max-width:14ch">Mari bicara.</h2>
+      <p class="lede" style="margin-top:1.2rem">Ceritakan proses mana yang ingin Anda rapikan. Kami balas dengan gambaran solusi dan langkah awal yang masuk akal untuk tim Anda.</p>
+      <div class="contact-grid">
+        <ul class="contact-list">
+          <li><span class="lab">Email</span><a href="mailto:info@kreyasolution.com">info@kreyasolution.com</a></li>
+          <li><span class="lab">Telepon</span><a href="tel:+6287886594667">+62 878 8659 4667</a></li>
+          <li><span class="lab">Situs</span><a href="https://www.kreyasolution.com" target="_blank" rel="noopener">www.kreyasolution.com</a></li>
+        </ul>
+        <div>
+          <p class="tiny" style="margin-bottom:.9rem">Kantor</p>
+          <p style="max-width:34ch;line-height:1.55">Gedung Wirausaha Lantai 1 Unit 104<br>Jl. HR Rasuna Said<br>Jakarta Selatan 12920</p>
+          <a class="btn" style="margin-top:1.6rem" href="mailto:info@kreyasolution.com?subject=Konsultasi%20proyek">Kirim email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <span class="tiny">PT Teknologi Kreatif Berkarya</span>
+    <span class="tiny">Jakarta, Indonesia</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  /* ---------- load sequence: one orchestrated moment ---------- */
+  requestAnimationFrame(function(){ document.body.classList.add("ready"); });
+
+  /* ---------- nav scroll edge ---------- */
+  var nav = document.getElementById("nav");
+  var heroShot = document.getElementById("heroShot");
+  var ticking = false;
+  function onScroll(){
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      ticking = false;
+      nav.dataset.stuck = window.scrollY > 8 ? "true" : "false";
+      if (heroShot && !reduced.matches){
+        var r = heroShot.getBoundingClientRect();
+        var vh = window.innerHeight;
+        // progress: 0 when the frame's top enters the viewport, 1 once it is settled
+        var p = 1 - Math.min(Math.max((r.top - vh * 0.25) / (vh * 0.75), 0), 1);
+        heroShot.style.transform = "scale(" + (0.9 + 0.1 * p).toFixed(4) + ")";
+      }
+    });
+  }
+  window.addEventListener("scroll", onScroll, {passive:true});
+  window.addEventListener("resize", onScroll);
+  onScroll();
+
+  /* ---------- spring: Apple's damping + response parameterisation ---------- */
+  function spring(opts){
+    var x = opts.from, v = opts.velocity || 0, target = opts.to;
+    var zeta = opts.damping == null ? 1 : opts.damping;
+    var response = opts.response || 0.4;
+    var w0 = 2 * Math.PI / response;
+    var k = w0 * w0, c = 2 * zeta * w0;
+    var last = performance.now(), raf = 0, stopped = false;
+
+    function step(now){
+      if (stopped) return;
+      var dt = Math.min((now - last) / 1000, 1/30);
+      last = now;
+      // fixed substeps keep the integration stable at low frame rates
+      var steps = Math.max(1, Math.ceil(dt / (1/240)));
+      var h = dt / steps;
+      for (var i = 0; i < steps; i++){
+        var a = -k * (x - target) - c * v;
+        v += a * h;
+        x += v * h;
+      }
+      opts.onUpdate(x, v);
+      if (Math.abs(x - target) < 0.3 && Math.abs(v) < 6){
+        x = target; opts.onUpdate(x, 0); stopped = true;
+        if (opts.onComplete) opts.onComplete();
+        return;
+      }
+      raf = requestAnimationFrame(step);
+    }
+    raf = requestAnimationFrame(step);
+    return {
+      stop: function(){ stopped = true; cancelAnimationFrame(raf); },
+      value: function(){ return x; },
+      velocity: function(){ return v; }
+    };
+  }
+
+  /* Apple's momentum projection (Designing Fluid Interfaces sample code) */
+  function project(velocity, decelerationRate){
+    var d = decelerationRate == null ? 0.998 : decelerationRate;
+    return (velocity / 1000) * d / (1 - d);
+  }
+
+  /* progressive resistance past a boundary instead of a hard stop */
+  function rubberband(overshoot, dimension, constant){
+    var c = constant == null ? 0.55 : constant;
+    return (overshoot * dimension * c) / (dimension + c * Math.abs(overshoot));
+  }
+
+  /* ---------- portfolio carousel ---------- */
+  var viewport = document.getElementById("viewport");
+  var track = document.getElementById("track");
+  var slides = Array.prototype.slice.call(track.children);
+  var dotsWrap = document.getElementById("dots");
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+
+  var GAP = 18;
+  var x = 0, stride = 0, index = 0, minX = 0, maxX = 0, anim = null;
+
+  function layout(){
+    var vw = viewport.clientWidth;
+    var slideW = Math.min(780, Math.round(vw * (vw < 700 ? 0.86 : 0.68)));
+    var pad = Math.max(16, Math.round((vw - slideW) / 2));
+    track.style.gap = GAP + "px";
+    track.style.paddingLeft = pad + "px";
+    track.style.paddingRight = pad + "px";
+    slides.forEach(function(s){ s.style.width = slideW + "px"; });
+    stride = slideW + GAP;
+    minX = -(slides.length - 1) * stride;
+    maxX = 0;
+    x = -index * stride;
+    render();
+  }
+
+  function render(){
+    track.style.transform = "translate3d(" + x.toFixed(2) + "px,0,0)";
+    // continuous feedback: neighbours recede while the gesture is still running
+    for (var i = 0; i < slides.length; i++){
+      var d = Math.min(Math.abs(x + i * stride) / stride, 1);
+      slides[i].style.opacity = (1 - d * 0.5).toFixed(3);
+      slides[i].style.transform = "scale(" + (1 - d * 0.035).toFixed(4) + ")";
+    }
+    var nearest = Math.round(-x / stride);
+    if (nearest !== index && nearest >= 0 && nearest < slides.length){
+      index = nearest; syncChrome();
+    }
+  }
+
+  function syncChrome(){
+    Array.prototype.forEach.call(dotsWrap.children, function(d, i){
+      d.setAttribute("aria-selected", i === index ? "true" : "false");
+    });
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === slides.length - 1;
+  }
+
+  function settle(to, velocity, bouncy){
+    if (anim) anim.stop();
+    anim = spring({
+      from: x, to: to, velocity: velocity || 0,
+      damping: reduced.matches ? 1 : (bouncy ? 0.82 : 1),
+      response: reduced.matches ? 0.25 : (bouncy ? 0.4 : 0.35),
+      onUpdate: function(val){ x = val; render(); }
+    });
+  }
+
+  function goTo(i, velocity, bouncy){
+    index = Math.max(0, Math.min(slides.length - 1, i));
+    syncChrome();
+    settle(-index * stride, velocity, bouncy);
+  }
+
+  slides.forEach(function(_, i){
+    var b = document.createElement("button");
+    b.className = "dot";
+    b.setAttribute("role", "tab");
+    b.setAttribute("aria-label", "Proyek " + (i + 1));
+    b.addEventListener("click", function(){ goTo(i); });
+    dotsWrap.appendChild(b);
+  });
+
+  prevBtn.addEventListener("click", function(){ goTo(index - 1); });
+  nextBtn.addEventListener("click", function(){ goTo(index + 1); });
+  viewport.addEventListener("keydown", function(e){
+    if (e.key === "ArrowRight"){ e.preventDefault(); goTo(index + 1); }
+    if (e.key === "ArrowLeft"){ e.preventDefault(); goTo(index - 1); }
+  });
+
+  /* pointer: 1:1 tracking, velocity history, interruptible at any instant */
+  var dragging = false, decided = false, horizontal = false;
+  var startX = 0, startY = 0, startOffset = 0, pid = null, hist = [];
+
+  viewport.addEventListener("pointerdown", function(e){
+    if (e.button !== undefined && e.button !== 0) return;
+    // grab the animation mid-flight: start from the live on-screen value
+    if (anim){ anim.stop(); anim = null; }
+    dragging = true; decided = false; horizontal = false;
+    pid = e.pointerId;
+    startX = e.clientX; startY = e.clientY;
+    startOffset = x;
+    hist = [{x: e.clientX, t: performance.now()}];
+  });
+
+  viewport.addEventListener("pointermove", function(e){
+    if (!dragging || e.pointerId !== pid) return;
+    var dx = e.clientX - startX, dy = e.clientY - startY;
+
+    if (!decided){
+      if (Math.abs(dx) < 10 && Math.abs(dy) < 10) return; // hysteresis
+      decided = true;
+      horizontal = Math.abs(dx) > Math.abs(dy);
+      if (!horizontal){ dragging = false; return; } // let the page scroll
+      viewport.setPointerCapture(pid);
+      viewport.classList.add("dragging");
+    }
+
+    var next = startOffset + dx;
+    if (next > maxX) next = maxX + rubberband(next - maxX, viewport.clientWidth);
+    if (next < minX) next = minX + rubberband(next - minX, viewport.clientWidth);
+    x = next;
+    render();
+
+    var now = performance.now();
+    hist.push({x: e.clientX, t: now});
+    while (hist.length > 2 && now - hist[0].t > 100) hist.shift();
+  });
+
+  function release(e){
+    if (!dragging || (e && pid !== null && e.pointerId !== pid)) return;
+    var wasHorizontal = horizontal;
+    dragging = false; horizontal = false;
+    viewport.classList.remove("dragging");
+    if (pid !== null && viewport.hasPointerCapture && viewport.hasPointerCapture(pid)) {
+      viewport.releasePointerCapture(pid);
+    }
+    pid = null;
+    if (!wasHorizontal) return;
+
+    // velocity from the last ~100ms of movement, not just the final event
+    var v = 0;
+    if (hist.length > 1){
+      var a = hist[0], b = hist[hist.length - 1];
+      var dt = (b.t - a.t) / 1000;
+      if (dt > 0) v = (b.x - a.x) / dt;
+    }
+
+    // animate to where the gesture was going, then hand the velocity over
+    var projected = x + project(v);
+    var target = Math.round(-projected / stride);
+    // a deliberate flick always advances at least one slide
+    if (Math.abs(v) > 350){
+      var dir = v < 0 ? 1 : -1;
+      var min = Math.round(-x / stride);
+      target = Math.abs(target - min) < 1 ? min + dir : target;
+    }
+    goTo(target, v, Math.abs(v) > 200);
+  }
+
+  viewport.addEventListener("pointerup", release);
+  viewport.addEventListener("pointercancel", release);
+  viewport.addEventListener("dragstart", function(e){ e.preventDefault(); });
+
+  window.addEventListener("resize", layout);
+  layout();
+  syncChrome();
+})();
+</script>
+</body>
+</html>
